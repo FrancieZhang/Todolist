@@ -1,3 +1,6 @@
+已修改 HTML，指标体系不再展示实际数值。以下为完整可粘贴代码：
+
+```html
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -9,25 +12,56 @@
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
     main{max-width:1320px;margin:auto;padding:28px}
-    h1{margin:0 0 6px;font-size:26px;line-height:1.25}h2{margin:28px 0 12px;font-size:19px}h3{margin:18px 0 10px;font-size:16px}
-    p{margin:6px 0}.muted{color:var(--muted)}.small{font-size:12px}.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
-    a{color:var(--accent)}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+    h1{margin:0 0 6px;font-size:26px;line-height:1.25}
+    h2{margin:28px 0 12px;font-size:19px}
+    h3{margin:18px 0 10px;font-size:16px}
+    p{margin:6px 0}
+    .muted{color:var(--muted)}
+    .small{font-size:12px}
+    .top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+    a{color:var(--accent)}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
     button{border:1px solid var(--line);border-radius:999px;background:var(--surface);padding:7px 13px;color:var(--text);cursor:pointer}
     button.active{background:var(--accent);border-color:var(--accent);color:#fff}
-    section[hidden]{display:none}.callout{border-left:4px solid var(--accent);background:var(--accent-soft);padding:13px 15px;margin-bottom:16px}
-    .callout.warning{border-color:var(--warn);background:#fff7e6}.callout strong{display:block;margin-bottom:3px}
+    section[hidden]{display:none}
+    .callout{border-left:4px solid var(--accent);background:var(--accent-soft);padding:13px 15px;margin-bottom:16px}
+    .callout.warning{border-color:var(--warn);background:#fff7e6}
+    .callout strong{display:block;margin-bottom:3px}
     .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:9px;background:var(--surface)}
-    table{border-collapse:collapse;width:100%;min-width:900px}th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-    th{position:sticky;top:0;background:#eef1f5;font-size:12px;z-index:1}tr:last-child td{border-bottom:0}tbody tr:nth-child(even){background:#fafbfc}
-    .status{font-weight:650;white-space:nowrap}.done{color:var(--good)}.progress{color:var(--warn)}.gap{color:var(--bad)}
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.grid.two{grid-template-columns:1.25fr 1fr}
-    .card{background:var(--surface);border:1px solid var(--line);border-radius:9px;overflow:hidden}.card-head{padding:9px 13px;border-bottom:1px solid var(--line);font-size:12px;font-weight:650;display:flex;justify-content:space-between}.card-body{padding:14px}
+    table{border-collapse:collapse;width:100%;min-width:900px}
+    th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+    th{position:sticky;top:0;background:#eef1f5;font-size:12px;z-index:1}
+    tr:last-child td{border-bottom:0}
+    tbody tr:nth-child(even){background:#fafbfc}
+    .status{font-weight:650;white-space:nowrap}
+    .done{color:var(--good)}
+    .progress{color:var(--warn)}
+    .gap{color:var(--bad)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .grid.two{grid-template-columns:1.25fr 1fr}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+    .card-head{padding:9px 13px;border-bottom:1px solid var(--line);font-size:12px;font-weight:650;display:flex;justify-content:space-between}
+    .card-body{padding:14px}
     .pill{font-size:11px;border-radius:999px;background:#eef1f5;padding:2px 8px;color:var(--muted)}
-    .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.stat b{display:block;font-size:24px;line-height:1.2}.stat span{font-size:12px;color:var(--muted)}
-    .divider{border:0;border-top:1px solid var(--line);margin:16px 0}details{border-top:1px solid var(--line);padding:12px 0}summary{font-weight:650;cursor:pointer}
+    .divider{border:0;border-top:1px solid var(--line);margin:16px 0}
+    details{border-top:1px solid var(--line);padding:12px 0}
+    summary{font-weight:650;cursor:pointer}
     footer{margin-top:24px;color:var(--muted);font-size:12px}
-    @media(max-width:800px){main{padding:18px}.top{display:block}.grid,.grid.two{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}h1{font-size:22px}}
-    @media print{body{background:#fff}.tabs{display:none}section[hidden]{display:block}.card,.table-wrap{break-inside:avoid}main{max-width:none;padding:0}}
+
+    @media(max-width:800px){
+      main{padding:18px}
+      .top{display:block}
+      .grid,.grid.two{grid-template-columns:1fr}
+      h1{font-size:22px}
+    }
+
+    @media print{
+      body{background:#fff}
+      .tabs{display:none}
+      section[hidden]{display:block}
+      .card,.table-wrap{break-inside:avoid}
+      main{max-width:none;padding:0}
+    }
   </style>
 </head>
 <body>
@@ -35,9 +69,11 @@
   <header class="top">
     <div>
       <h1>人形机器人对标 Robotaxi：难题状态与迁移重点</h1>
-      <p class="muted">基于 FlowUs《Humanoid robots: Crossing the chasm…》、昆仑调度上下文与当前指标看板</p>
+      <p class="muted">基于 FlowUs《Humanoid robots: Crossing the chasm…》、昆仑调度上下文与当前指标体系</p>
     </div>
-    <a href="https://flowus.cn/9b5078bb-674e-4322-9eb6-408053b2961f" target="_blank" rel="noreferrer">查看原始 FlowUs 页面</a>
+    <a href="https://flowus.cn/9b5078bb-674e-4322-9eb6-408053b2961f" target="_blank" rel="noreferrer">
+      查看原始 FlowUs 页面
+    </a>
   </header>
 
   <nav class="tabs" aria-label="内容切换">
@@ -47,87 +83,282 @@
   </nav>
 
   <section id="conclusion">
-    <div class="callout"><strong>核心判断</strong>Robotaxi 真正领先的不是“把所有技术难题都解决了”，而是把不完美技术约束在明确 ODD 内，并用调度、指标、人工兜底和准入证据做成可运营闭环。人形机器人最应复制的是这套 0→1 商业化系统工程。</div>
-    <div class="table-wrap"><table>
-      <thead><tr><th>机器人难题</th><th>Robotaxi 状态</th><th>已经做到</th><th>仍在进行</th><th>迁移判断</th></tr></thead>
-      <tbody>
-        <tr><td>无围栏安全 / ODD</td><td class="status done">已完成 0→1</td><td>限定 ODD 内已有感知—规划—执行、最小风险停车、远程协助、准入与运营流程</td><td>扩 ODD 成本高；高精地图依赖与长尾泛化仍未完成</td><td>迁移方法，不迁移结论：先把机器人任务域做成可认证的 Task ODD</td></tr>
-        <tr><td>持续运行与补能</td><td class="status progress">规模化优化中</td><td>已形成排班、动态 SOC、峰平谷补能、资源排队和运力熔断闭环</td><td>补能仍有人工作业与跨系统断链；机器人本体续航仅 2–4 小时</td><td>高度可迁移：把电量变成生产资源约束，而非只做电池参数优化</td></tr>
-        <tr><td>稳定性 / 故障恢复</td><td class="status done">已完成 0→1</td><td>微状态、超时、重试、降级、工单、远程/现场接管和恢复条件已被运营化</td><td>网络、OEM 能力和物理作业仍会阻塞；机器人跌倒恢复更难</td><td>高度可迁移：状态机、资源锁、故障分级、安全港与人机接管</td></tr>
-        <tr><td>灵巧操作</td><td class="status gap">Robotaxi 未解决</td><td>道路驾驶把复杂问题约束为轮式移动与标准交通交互</td><td>抓握、触觉、力控、双臂协同、跌倒及技能泛化仍是机器人本体核心课题</td><td>只能迁移任务降维和验收方法，不能迁移驾驶技术本身</td></tr>
-        <tr><td>数据与学习闭环</td><td class="status progress">部分解决</td><td>具备车端日志、DOTA、场景回放、指标切片、版本验证和长尾挖掘范式</td><td>Robotaxi 泛化仍不足；机器人数据维度更高、动作标签更贵</td><td>高度可迁移：事件模型、失败样本闭环、影子验证、灰度与回滚</td></tr>
-        <tr><td>商业场景与 UE</td><td class="status progress">样板间成立</td><td>Robotaxi 的服务对象、订单、收入、运力与线下成本链路明确</td><td>稳定 UE、多城市/多场景 UE 打正仍在进行</td><td>最高优先级迁移：先定义单任务 UE，再决定技术优先级</td></tr>
-        <tr><td>硬件 / BOM 成本</td><td class="status progress">部分解决</td><td>Robotaxi 已经历传感器、计算平台、车型集成的任务定制与规模降本</td><td>人形机器人执行器占 BOM 约 40%–60%，降本对象不同</td><td>迁移 target-cost 与任务裁剪方法；不可直接套用零部件方案</td></tr>
-        <tr><td>法规、责任与社会接受</td><td class="status done">路径已建立</td><td>限定区域准入、测试、审计、运营责任和事故处置已有明确路径</td><td>Robotaxi 仍受区域限制；人形机器人无围栏协作标准仍在起草</td><td>高度可迁移：证据链、分级准入、运行域声明和安全审计</td></tr>
-      </tbody>
-    </table></div>
+    <div class="callout">
+      <strong>核心判断</strong>
+      Robotaxi 真正领先的不是“把所有技术难题都解决了”，而是把不完美技术约束在明确 ODD 内，并用调度、指标、人工兜底和准入证据做成可运营闭环。人形机器人最应复制的是这套 0→1 商业化系统工程。
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>机器人难题</th>
+            <th>Robotaxi 状态</th>
+            <th>已经做到</th>
+            <th>仍在进行</th>
+            <th>迁移判断</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>无围栏安全 / ODD</td>
+            <td class="status done">已完成 0→1</td>
+            <td>限定 ODD 内已有感知—规划—执行、最小风险停车、远程协助、准入与运营流程</td>
+            <td>扩 ODD 成本高；高精地图依赖与长尾泛化仍未完成</td>
+            <td>迁移方法，不迁移结论：先把机器人任务域做成可认证的 Task ODD</td>
+          </tr>
+          <tr>
+            <td>持续运行与补能</td>
+            <td class="status progress">规模化优化中</td>
+            <td>已形成排班、动态 SOC、峰平谷补能、资源排队和运力熔断闭环</td>
+            <td>补能仍有人工作业与跨系统断链；机器人本体续航仍有限</td>
+            <td>高度可迁移：把电量变成生产资源约束，而非只做电池参数优化</td>
+          </tr>
+          <tr>
+            <td>稳定性 / 故障恢复</td>
+            <td class="status done">已完成 0→1</td>
+            <td>微状态、超时、重试、降级、工单、远程/现场接管和恢复条件已被运营化</td>
+            <td>网络、OEM 能力和物理作业仍会阻塞；机器人跌倒恢复更难</td>
+            <td>高度可迁移：状态机、资源锁、故障分级、安全港与人机接管</td>
+          </tr>
+          <tr>
+            <td>灵巧操作</td>
+            <td class="status gap">Robotaxi 未解决</td>
+            <td>道路驾驶把复杂问题约束为轮式移动与标准交通交互</td>
+            <td>抓握、触觉、力控、双臂协同、跌倒及技能泛化仍是机器人本体核心课题</td>
+            <td>只能迁移任务降维和验收方法，不能迁移驾驶技术本身</td>
+          </tr>
+          <tr>
+            <td>数据与学习闭环</td>
+            <td class="status progress">部分解决</td>
+            <td>具备车端日志、DOTA、场景回放、指标切片、版本验证和长尾挖掘范式</td>
+            <td>Robotaxi 泛化仍不足；机器人数据维度更高、动作标签更贵</td>
+            <td>高度可迁移：事件模型、失败样本闭环、影子验证、灰度与回滚</td>
+          </tr>
+          <tr>
+            <td>商业场景与 UE</td>
+            <td class="status progress">样板间成立</td>
+            <td>Robotaxi 的服务对象、订单、收入、运力与线下成本链路明确</td>
+            <td>稳定 UE、多城市和多场景 UE 打正仍在进行</td>
+            <td>最高优先级迁移：先定义单任务 UE，再决定技术优先级</td>
+          </tr>
+          <tr>
+            <td>硬件 / BOM 成本</td>
+            <td class="status progress">部分解决</td>
+            <td>Robotaxi 已经历传感器、计算平台、车型集成的任务定制与规模降本</td>
+            <td>人形机器人主要成本集中于执行器等不同部件，降本对象不同</td>
+            <td>迁移 target-cost 与任务裁剪方法；不可直接套用零部件方案</td>
+          </tr>
+          <tr>
+            <td>法规、责任与社会接受</td>
+            <td class="status done">路径已建立</td>
+            <td>限定区域准入、测试、审计、运营责任和事故处置已有明确路径</td>
+            <td>Robotaxi 仍受区域限制；人形机器人无围栏协作标准仍在完善</td>
+            <td>高度可迁移：证据链、分级准入、运行域声明和安全审计</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <section id="migration" hidden>
     <p>迁移顺序应从“运营闭环”开始，而不是先复制自动驾驶模型栈。P0 的判断标准是：没有它就无法证明安全、稳定完成任务或算清 UE。</p>
-    <div class="table-wrap"><table>
-      <thead><tr><th>优先级</th><th>可迁移能力</th><th>机器人侧落地对象</th><th>预期价值</th></tr></thead>
-      <tbody>
-        <tr><td class="status gap">P0</td><td>Task ODD + 任务组合</td><td>场景、物体、动作、速度、人员距离、环境条件、失败边界</td><td>只承诺可稳定完成的任务域；域外拒绝、降级或转人工</td></tr>
-        <tr><td class="status gap">P0</td><td>规则引擎 → 任务模块 → 微状态机</td><td>触发、前置条件、资源锁、不可跳步状态、超时、重试、完成事件</td><td>让稳定性从“模型成功率”升级为“端到端任务完成率”</td></tr>
-        <tr><td class="status gap">P0</td><td>UE 决策引擎</td><td>机器人小时成本、替代人工时长、产出、损耗、停机、人工接管</td><td>技术路线按 UE Gain/Loss 排序，避免追求无商业价值的通用能力</td></tr>
-        <tr><td class="status gap">P0</td><td>Fleet orchestration</td><td>机器人、工位、工具、充电位、人员、网络、时间窗、安全区</td><td>从单机 Demo 变成多机可持续生产系统</td></tr>
-        <tr><td class="status progress">P1</td><td>异常与人机接管</td><td>可恢复 / 需远程 / 需现场 / 必须停机；联合计算机器人与人员 ETA</td><td>减少“人找机器人”和无效等待，沉淀异常热区</td></tr>
-        <tr><td class="status progress">P1</td><td>补能与功耗调度</td><td>动态电量阈值、机会充电、换电、峰平谷、任务需求、排队与路程</td><td>在续航不突破时，先用调度提高有效在线率</td></tr>
-        <tr><td class="status progress">P1</td><td>决策回放与数据闭环</td><td>输入、策略版本、资源快照、轨迹、人工动作、结果、UE 影响</td><td>定位系统性损失并为策略迭代提供可复现证据</td></tr>
-        <tr><td>P2</td><td>跨系统连接</td><td>ERP / WMS / MES / 门禁 / 安全系统 / 工单 / 排班接口</td><td>避免机器人形成新的运营孤岛</td></tr>
-      </tbody>
-    </table></div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>优先级</th>
+            <th>可迁移能力</th>
+            <th>机器人侧落地对象</th>
+            <th>预期价值</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="status gap">P0</td>
+            <td>Task ODD + 任务组合</td>
+            <td>场景、物体、动作、速度、人员距离、环境条件、失败边界</td>
+            <td>只承诺可稳定完成的任务域；域外拒绝、降级或转人工</td>
+          </tr>
+          <tr>
+            <td class="status gap">P0</td>
+            <td>规则引擎 → 任务模块 → 微状态机</td>
+            <td>触发、前置条件、资源锁、不可跳步状态、超时、重试、完成事件</td>
+            <td>让稳定性从“模型成功率”升级为“端到端任务完成率”</td>
+          </tr>
+          <tr>
+            <td class="status gap">P0</td>
+            <td>UE 决策引擎</td>
+            <td>机器人小时成本、替代人工时长、产出、损耗、停机、人工接管</td>
+            <td>技术路线按 UE Gain/Loss 排序，避免追求无商业价值的通用能力</td>
+          </tr>
+          <tr>
+            <td class="status gap">P0</td>
+            <td>Fleet orchestration</td>
+            <td>机器人、工位、工具、充电位、人员、网络、时间窗、安全区</td>
+            <td>从单机 Demo 变成多机可持续生产系统</td>
+          </tr>
+          <tr>
+            <td class="status progress">P1</td>
+            <td>异常与人机接管</td>
+            <td>可恢复、需远程、需现场、必须停机；联合计算机器人与人员 ETA</td>
+            <td>减少“人找机器人”和无效等待，沉淀异常热区</td>
+          </tr>
+          <tr>
+            <td class="status progress">P1</td>
+            <td>补能与功耗调度</td>
+            <td>动态电量阈值、机会充电、换电、峰平谷、任务需求、排队与路程</td>
+            <td>在续航不突破时，先用调度提高有效在线率</td>
+          </tr>
+          <tr>
+            <td class="status progress">P1</td>
+            <td>决策回放与数据闭环</td>
+            <td>输入、策略版本、资源快照、轨迹、人工动作、结果、UE 影响</td>
+            <td>定位系统性损失并为策略迭代提供可复现证据</td>
+          </tr>
+          <tr>
+            <td>P2</td>
+            <td>跨系统连接</td>
+            <td>ERP / WMS / MES / 门禁 / 安全系统 / 工单 / 排班接口</td>
+            <td>避免机器人形成新的运营孤岛</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <h3>Robotaxi 调度架构的机器人映射</h3>
     <div class="grid">
-      <article class="card"><div class="card-head">规则引擎 <span class="pill">决策层</span></div><div class="card-body">订单/产线需求、Task ODD、安全、能源、SLA 和 UE 共同决定下一任务。</div></article>
-      <article class="card"><div class="card-head">任务模块 <span class="pill">编排层</span></div><div class="card-body">搬运、上下料、巡检、补能、换工具、维护各自拥有生命周期和资源锁。</div></article>
-      <article class="card"><div class="card-head">微状态机 <span class="pill">执行层</span></div><div class="card-body">前往工位→识别→抓取→搬运→放置→质检，每步都有事件、超时与恢复。</div></article>
+      <article class="card">
+        <div class="card-head">规则引擎 <span class="pill">决策层</span></div>
+        <div class="card-body">订单/产线需求、Task ODD、安全、能源、SLA 和 UE 共同决定下一任务。</div>
+      </article>
+      <article class="card">
+        <div class="card-head">任务模块 <span class="pill">编排层</span></div>
+        <div class="card-body">搬运、上下料、巡检、补能、换工具、维护各自拥有生命周期和资源锁。</div>
+      </article>
+      <article class="card">
+        <div class="card-head">微状态机 <span class="pill">执行层</span></div>
+        <div class="card-body">前往工位→识别→抓取→搬运→放置→质检，每步都有事件、超时与恢复。</div>
+      </article>
     </div>
   </section>
 
   <section id="metrics" hidden>
-    <div class="callout warning"><strong>指标口径提醒</strong>下面的 Robotaxi 数字来自昆仑看板 2026-08-31 当前筛选，不代表行业基准。尤其“人车比”的分母包含各班次排班人员，不能与其他口径直接横比。</div>
-    <div class="grid two">
-      <article class="card"><div class="card-head">昆仑运营快照 <span class="pill">Robotaxi 实测锚点</span></div><div class="card-body">
-        <div class="stats">
-          <div class="stat"><b class="done">98.7%</b><span>排班车辆进入运营（593 / 601）</span></div>
-          <div class="stat"><b>9.37 h</b><span>单车日均 ONLINE 时长</span></div>
-          <div class="stat"><b class="progress">4.12</b><span>整体车/人（当前口径）</span></div>
-          <div class="stat"><b>7.42 / 10.02</b><span>早班 / 晚班车人比</span></div>
-        </div><hr class="divider"><p class="small muted">通宵为 66.78 车/人，说明班次工作结构差异巨大；应拆成监控、补能、清洁、维护、安全检查等工作包，而非只看一个总人车比。</p>
-      </div></article>
-      <div><h3>这些数字证明了什么</h3><p>1. Robotaxi 已能稳定把绝大多数排班资产转成实际运力。</p><p>2. 平均在线时长已接近完整工作班次，运营调度可缓冲部分硬件限制。</p><p>3. 人效远未“彻底解决”，并且高度依赖班次、场地和人工动作口径。</p><p>4. 对机器人，应优先建立相同的“计划→执行→有效产出”转化漏斗。</p></div>
+    <div class="callout warning">
+      <strong>指标口径提醒</strong>
+      本页只保留指标概念和计算方式，不展示任何实际业务数值。所有指标都必须明确统计周期、去重方式、状态定义、人员范围和切片维度，避免跨场地或跨班次直接比较。
     </div>
+
+    <div class="grid two">
+      <article class="card">
+        <div class="card-head">核心运营指标 <span class="pill">概念与公式</span></div>
+        <div class="card-body">
+          <p>
+            <strong>排班资产运营转化率</strong><br>
+            <span class="muted">统计期内实际进入运营且关联有效任务的去重资产数 ÷ 同期已排班且关联有效任务的去重资产数。</span>
+          </p>
+          <p>
+            <strong>平均有效运营时长</strong><br>
+            <span class="muted">统计期内各资产处于有效运营状态的时长总和 ÷ 有效运营资产日数。</span>
+          </p>
+          <p>
+            <strong>人机比</strong><br>
+            <span class="muted">日均已排班机器人数量 ÷ 日均参与对应运营工作的去重人员数量；需按班次和岗位分别计算。</span>
+          </p>
+          <p>
+            <strong>有效作业时间占比</strong><br>
+            <span class="muted">完成业务任务的有效状态时长 ÷ 可用排班窗口时长；等待、补能、故障和人工接管应单独归因。</span>
+          </p>
+          <hr class="divider">
+          <p class="small muted">人效需要拆分为监控、补能、清洁、维护和安全检查等工作包，不能只看一个汇总人机比。</p>
+        </div>
+      </article>
+
+      <div>
+        <h3>指标体系要回答什么</h3>
+        <p>1. 计划投入的机器人有多少真正转化为有效产能？</p>
+        <p>2. 有效作业、等待、补能、故障和人工处理分别消耗多少时间？</p>
+        <p>3. 哪些任务、场地、班次、机型或版本是主要损失来源？</p>
+        <p>4. 调度策略是否同时改善安全、产出、人效、能耗与 UE，而非局部优化？</p>
+      </div>
+    </div>
+
     <h3>建议机器人一期指标树</h3>
-    <div class="table-wrap"><table>
-      <thead><tr><th>指标域</th><th>核心指标</th><th>必要口径</th></tr></thead>
-      <tbody>
-        <tr><td>任务交付</td><td>端到端任务完成率；无人工任务完成率；单位时间合格产出</td><td>按任务 ODD、机器人型号、站点、班次、版本切片</td></tr>
-        <tr><td>稳定性</td><td>连续正常运行时长；微状态 P50/P90/P95；超时/重试/卡死率</td><td>同时记录阻塞原因，不只看平均值</td></tr>
-        <tr><td>人工效率</td><td>机器人/人；人工介入率；响应/到达/处理/关闭时长；闲置损失</td><td>区分远程、现场、维护、补能和安全检查</td></tr>
-        <tr><td>能源效率</td><td>有效作业时长占比；每任务/每小时能耗成本；补能排队损失</td><td>关联任务需求、SOC、充电窗口和电价</td></tr>
-        <tr><td>安全</td><td>安全停机率；域外拒绝正确率；人机最小距离违规；碰撞/跌倒近失</td><td>按严重度建事件证据链和复盘闭环</td></tr>
-        <tr><td>UE</td><td>单任务贡献毛利；每有效作业小时总成本；回收期；UE Gain/Loss</td><td>硬件折旧、能源、场地、人工、维护、停机损失必须全量计入</td></tr>
-      </tbody>
-    </table></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>指标域</th>
+            <th>核心指标与计算方式</th>
+            <th>必要口径</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>任务交付</td>
+            <td>端到端任务完成率＝成功完成的有效任务数 ÷ 已启动的有效任务数；无人工完成率＝未触发人工接管的成功任务数 ÷ 成功任务数</td>
+            <td>按任务 ODD、机器人型号、站点、班次、版本切片</td>
+          </tr>
+          <tr>
+            <td>稳定性</td>
+            <td>连续正常运行时长按相邻故障或停机事件划分区间；微状态耗时统计分位数；超时、重试、卡死率均以进入对应状态的任务数为分母</td>
+            <td>同时记录阻塞原因，不只看平均值</td>
+          </tr>
+          <tr>
+            <td>人工效率</td>
+            <td>人机比＝日均排班机器人 ÷ 日均去重人员；人工介入率＝触发人工动作的任务数 ÷ 已启动任务数；分别统计响应、到达、处理和关闭时长</td>
+            <td>区分远程、现场、维护、补能和安全检查</td>
+          </tr>
+          <tr>
+            <td>能源效率</td>
+            <td>有效作业时长占比＝有效作业时长 ÷ 可用排班窗口；单位任务能耗成本＝任务关联能耗费用 ÷ 合格任务数；补能损失按排队、路程和充电时长折算</td>
+            <td>关联任务需求、SOC、充电窗口和电价</td>
+          </tr>
+          <tr>
+            <td>安全</td>
+            <td>安全停机率＝安全原因停机任务数 ÷ 已启动任务数；域外拒绝正确率＝正确拒绝域外任务数 ÷ 已识别域外任务数；近失事件按严重度和暴露时长归一</td>
+            <td>建立事件证据链、审核记录和复盘闭环</td>
+          </tr>
+          <tr>
+            <td>UE</td>
+            <td>单任务贡献＝任务收入或等价产出价值－任务可变成本；每有效作业小时总成本＝全量运营成本 ÷ 有效作业时长；UE Gain/Loss 比较策略变更前后的收入增益与成本损失</td>
+            <td>硬件折旧、能源、场地、人工、维护、停机损失必须全量计入</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <h2>边界与待确认</h2>
-  <details open><summary>事实、判断与待确认的边界</summary>
-    <p><strong>已知事实：</strong>FlowUs 将机器人 P0 blocker 定义为无围栏安全和持续正常运行，并记录 Robotaxi 已完成大多数 blocker 的 0→1；昆仑看板提供了上述运营指标。</p>
+  <details open>
+    <summary>事实、判断与待确认的边界</summary>
+    <p><strong>已知事实：</strong>FlowUs 将机器人核心 blocker 定义为无围栏安全和持续正常运行，并记录 Robotaxi 已完成大多数 blocker 的 0→1。</p>
     <p><strong>分析判断：</strong>“已解决”仅表示在限定 ODD 和运营兜底下形成闭环，不表示感知泛化、硬件可靠性或 UE 已彻底完成。</p>
     <p><strong>待确认：</strong>机器人首个 Task ODD、目标人效、单任务 UE、允许人工介入率、安全阈值和灰度场地均为 TBD。</p>
   </details>
-  <footer>来源：用户指定 FlowUs 页面；Wukong/Kunlun 调度系统领域资料；昆仑数据指标看板当前页面。BOM 占比沿用 FlowUs 摘录的 McKinsey 数据。</footer>
+
+  <footer>
+    来源：用户指定 FlowUs 页面；Wukong/Kunlun 调度系统领域资料。
+  </footer>
 </main>
+
 <script>
-  const buttons=[...document.querySelectorAll("[data-tab]")];
-  const sections=[...document.querySelectorAll("main>section")];
-  buttons.forEach(button=>button.addEventListener("click",()=>{
-    buttons.forEach(item=>item.classList.toggle("active",item===button));
-    sections.forEach(section=>section.hidden=section.id!==button.dataset.tab);
-  }));
+  const buttons = [...document.querySelectorAll("[data-tab]")];
+  const sections = [...document.querySelectorAll("main > section")];
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      buttons.forEach(item => {
+        item.classList.toggle("active", item === button);
+      });
+
+      sections.forEach(section => {
+        section.hidden = section.id !== button.dataset.tab;
+      });
+    });
+  });
 </script>
 </body>
 </html>
+```
