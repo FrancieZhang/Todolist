@@ -140,4 +140,52 @@ document.getElementById("export").onclick=()=>{let b=new Blob([JSON.stringify(da
 document.getElementById("import").onchange=x=>{let f=x.target.files[0];if(!f)return;let r=new FileReader;r.onload=()=>{try{let d=JSON.parse(r.result);load(d);save()}catch{alert("备份格式错误")}};r.readAsText(f);x.target.value=""};
 document.getElementById("reset").onclick=()=>{if(confirm("确认清空全部标记和批注？")){localStorage.removeItem(KEY);load({})}};
 try{load(JSON.parse(localStorage.getItem(KEY)||"{}"))}catch{load({})}
+<!-- 引入 Supabase 数据库组件 -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+  // 1. 将下面的中文替换为你刚刚复制的 URL 和 Key（务必保留外面的单引号 ' '）
+  const supabaseUrl = 'sb_publishable_fQyQPQWbVarfTY7qrrNLuQ_KCU8Gsdm';
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF4aGhocnl6bW96ZGtuZWdjeGRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzM0NDcsImV4cCI6MjEwMzkwOTQ0N30.JdkvyC8Q3C5VDbnlNcwOjTtZvnpIUthBd3l_C_OqNoM';
+  const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+  // 当网页加载完成时执行
+  document.addEventListener('DOMContentLoaded', async () => {
+    // 找到网页里所有的打勾框
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    
+    // 给没有ID的打勾框按顺序自动编号（比如 task_0, task_1），作为存入数据库的身份证号
+    checkboxes.forEach((cb, index) => {
+      if (!cb.id) {
+        cb.id = 'task_' + index;
+      }
+    });
+
+    // 2. 网页刚打开时：从数据库拉取之前的打卡记录，自动打勾
+    const { data } = await supabase.from('tasks').select('*');
+    if (data) {
+      data.forEach(dbTask => {
+        const checkbox = document.getElementById(dbTask.id);
+        if (checkbox) {
+          checkbox.checked = dbTask.is_completed;
+        }
+      });
+    }
+
+    // 3. 当你点击打勾框时：立刻把新的状态同步到云端数据库
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', async (e) => {
+        const taskId = e.target.id;
+        const isChecked = e.target.checked;
+        
+        // 发送更新指令到数据库
+        await supabase.from('tasks').upsert([
+          { id: taskId, is_completed: isChecked }
+        ]);
+      });
+    });
+  });
+</script>
+
+
 </script></body></html>
