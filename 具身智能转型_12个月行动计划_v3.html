@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>具身智能转型｜12个月行动计划 v3</title>
+<style>
+:root{--bg:#f4f1e9;--card:#fffdf8;--ink:#17211c;--muted:#68716a;--line:#d9d7ce;--green:#176b51;--soft:#e3efe9;--blue:#315f8a;--purple:#70558e;--orange:#b9592b;--pink:#984b69}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.6 "Segoe UI","Microsoft YaHei",sans-serif}
+button,input,textarea,select{font:inherit}.wrap{max-width:1180px;margin:auto;padding:24px}
+header{padding:34px;border-radius:22px;background:#17211c;color:#fff;position:relative;overflow:hidden}header:after{content:"12";position:absolute;right:20px;top:-70px;color:#ffffff0b;font:800 220px Georgia}
+.eyebrow{color:#8cc7ad;font-size:11px;letter-spacing:.18em;font-weight:700}h1{font:700 clamp(30px,5vw,54px)/1.1 Georgia,"Microsoft YaHei";margin:8px 0}header p{max-width:760px;color:#c7d1cc;margin:0}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.pill{border:1px solid #ffffff2b;border-radius:99px;padding:5px 10px;font-size:11px;color:#d8e2dc}
+.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:16px 0}.toolbar button,.file{padding:8px 12px;border:1px solid var(--line);border-radius:9px;background:var(--card);cursor:pointer}.toolbar button:hover,.file:hover{border-color:var(--green);color:var(--green)}
+#import{display:none}.saved{margin-left:auto;color:var(--muted);font-size:11px}
+.overview{display:grid;grid-template-columns:1fr 1fr;gap:14px}.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}.box h2{margin:0 0 10px;font:700 20px Georgia,"Microsoft YaHei"}
+.pct{font:700 40px Georgia;color:var(--green)}.bar{height:9px;background:#e7e4dc;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--green);transition:.2s}
+.tracks{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.tracks span{background:#f0efe9;border-radius:7px;padding:5px 8px;font-size:11px}.rules{margin:0;padding-left:18px;color:var(--muted)}.rules b{color:var(--ink)}
+nav{position:sticky;top:0;z-index:4;display:flex;gap:6px;overflow:auto;padding:10px 0;background:#f4f1e9eb;backdrop-filter:blur(8px)}nav a{white-space:nowrap;text-decoration:none;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px 9px;font-size:11px}
+.month{scroll-margin-top:55px;margin:14px 0;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}.mh{display:grid;grid-template-columns:68px 1fr auto;gap:12px;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)}
+.mn{font:700 29px Georgia;color:var(--green)}.theme{display:inline-block;padding:2px 7px;border-radius:99px;background:var(--ink);color:#fff;font-size:9px;font-weight:700;letter-spacing:.08em}.mh h2{font-size:19px;margin:3px 0 0}.mh p{margin:0;color:var(--muted);font-size:11px}.mh select{border:1px solid var(--line);border-radius:8px;padding:6px;background:#fff}
+.tasks{display:grid;grid-template-columns:1fr 1fr}.task{padding:16px 18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.task:nth-child(even){border-right:0}.task.done{background:#f1f8f4}
+.top{display:flex;gap:9px}.check{appearance:none;width:18px;height:18px;border:2px solid #aab0ab;border-radius:5px;flex:0 0 auto;margin-top:2px}.check:checked{background:var(--green);border-color:var(--green);box-shadow:inset 0 0 0 3px white}
+.tag{display:inline-block;border-radius:99px;padding:2px 7px;font-size:9px;font-weight:800;letter-spacing:.07em}.finance{background:#e7edf5;color:var(--blue)}.ai{background:#eee8f4;color:var(--purple)}.embodied{background:var(--soft);color:var(--green)}.work{background:#f8e8de;color:var(--orange)}.network{background:#f6e5ec;color:var(--pink)}
+.task h3{margin:4px 0 8px;font-size:14px}.io{display:grid;grid-template-columns:42px 1fr;gap:3px 7px;margin-left:27px;font-size:11px}.io b{color:var(--muted)}textarea{width:calc(100% - 27px);margin:10px 0 0 27px;min-height:54px;padding:8px;border:1px dashed #c8cac5;border-radius:8px;background:#ffffffa8;resize:vertical}
+.note{width:100%;margin:0;border:0;border-top:1px solid var(--line);border-radius:0;padding:13px 18px;background:#faf9f5}.checkpoint{grid-column:1/-1;padding:12px 18px;background:#f7ecdf;color:#744729;font-size:12px}
+.reports{margin-top:25px}.reports h2{font:700 27px Georgia,"Microsoft YaHei";margin-bottom:4px}.reports>p{color:var(--muted);font-size:12px}.report-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.report{display:flex;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px}.report h3{font-size:13px;margin:1px 0}.report p{font-size:11px;color:var(--muted);margin:5px 0}.report a{color:var(--green);font-size:11px}.report .out{border-left:2px solid var(--green);padding-left:7px;color:var(--ink)}
+footer{text-align:center;color:var(--muted);font-size:10px;padding:25px}
+@media(max-width:760px){.wrap{padding:12px}header{padding:25px}.overview,.tasks,.report-grid{grid-template-columns:1fr}.task{border-right:0}.mh{grid-template-columns:52px 1fr}.mh select{grid-column:1/-1;width:100%}.saved{width:100%;margin:0}}
+@media print{body{background:#fff}.toolbar,nav{display:none}.wrap{max-width:none;padding:0}.month,.report{break-inside:avoid}}
+</style>
+</head>
+<body><main class="wrap">
+<header>
+  <div class="eyebrow">CAPABILITY-FIRST TRANSITION PLAN · V3</div>
+  <h1>具身智能产品 Leader<br>12个月行动计划</h1>
+  <p>财务与研报在 M1–M2 并行：财务使用晚间整块时间，研报使用工作空闲碎片时间。M1–M5 自闭环，M6–M8 形成作品，M9 起带着成果对外验证。</p>
+  <div class="pills"><span class="pill">整块时间 8–10h/周</span><span class="pill">研报碎片时间 1.5–2h/周</span><span class="pill">本职每月沉淀</span><span class="pill">M9 起对外</span><span class="pill">运动 ≥4h/周</span></div>
+</header>
+<div class="toolbar">
+  <button id="export">导出备份</button><label class="file" for="import">导入备份</label><input id="import" type="file" accept=".json">
+  <button onclick="window.print()">打印/PDF</button><button id="reset">清空标记</button><span class="saved" id="saved">本地自动保存已开启</span>
+</div>
+<section class="overview">
+  <div class="box"><div class="pct" id="pct">0%</div><div id="count">0/0 项</div><div class="bar"><i id="bar"></i></div><div class="tracks" id="tracks"></div></div>
+  <div class="box"><h2>执行纪律</h2><ul class="rules">
+    <li><b>研报可顺延：</b>M2 工作忙时，优先完成财务，研报延至 M3 碎片时间。</li>
+    <li><b>访谈不设次数：</b>只有公开信息无法回答、且已有明确问题清单时才约人。</li>
+    <li><b>学习必须有输出：</b>不做逐页摘要，每项都转为模板、框架或判断。</li>
+    <li><b>提前撤离：</b>项目降级、主导权被剥夺或公司出现财务风险时，前移 M6–M9。</li>
+  </ul></div>
+</section>
+<nav id="nav"></nav><div id="months"></div>
+
+<section class="reports" id="reports">
+<h2>M1–M2 研报并行清单</h2><p>每篇最多 2 小时，只完成指定输出。远期 TAM 和意向订单只作假设，不作事实。</p>
+<div class="report-grid">
+  <label class="report"><input type="checkbox" data-extra="r1"><div><h3>1. IFR｜World Robotics 2025 – Service Robots</h3><p>真实销量、场景结构与 RaaS 基线。</p><p class="out"><b>输出：</b>物流、清洁、医疗、酒店的销量/RaaS/购买动因表。</p><a target="_blank" href="https://ifr.org/img/worldrobotics/Executive_Summary_WR_2025_Service_Robots.pdf">打开报告</a></div></label>
+  <label class="report"><input type="checkbox" data-extra="r2"><div><h3>2. McKinsey｜Humanoid Robots: Crossing the Chasm</h3><p>安全、持续 uptime、灵巧与移动、成本四座桥。</p><p class="out"><b>输出：</b>Robotaxi已解决/机器人待解决/可迁移方法。</p><a target="_blank" href="https://www.mckinsey.com/industries/industrials/our-insights/humanoid-robots-crossing-the-chasm-from-concept-to-commercial-reality">打开报告</a></div></label>
+  <label class="report"><input type="checkbox" data-extra="r3"><div><h3>3. Morgan Stanley｜The Humanoid 100</h3><p>Brain / Body / Integrator 全球产业链。</p><p class="out"><b>输出：</b>20家相关公司及部署、产品组织、商业模式。</p><a target="_blank" href="https://advisor.morganstanley.com/john.howard/documents/field/j/jo/john-howard/The_Humanoid_100_-_Mapping_the_Humanoid_Robot_Value_Chain.pdf">打开报告</a></div></label>
+  <label class="report"><input type="checkbox" data-extra="r4"><div><h3>4. MERICS｜Embodied AI: China’s Ambitious Path</h3><p>外部视角校正国内乐观叙事。</p><p class="out"><b>输出：</b>政策推动与商业闭环缺口各5条证据。</p><a target="_blank" href="https://merics.org/en/report/embodied-ai-chinas-ambitious-path-transform-its-robotics-industry">打开报告</a></div></label>
+  <label class="report"><input type="checkbox" data-extra="r5"><div><h3>5. GGII｜中国人形机器人产业发展蓝皮书</h3><p>中国厂商、供应链与应用场景。</p><p class="out"><b>输出：</b>样机/实训/常态部署/规模复制/商业闭环五级表。</p><a target="_blank" href="http://www.nstipsp.com/page93.html?article_id=4913">查看发布信息</a></div></label>
+  <label class="report"><input type="checkbox" data-extra="r6"><div><h3>6. 中国信通院｜具身智能机器人关键技术应用</h3><p>建立技术栈词汇和能力边界。</p><p class="out"><b>输出：</b>技术栈图，标注产品可控/模型可控/当前不可控。</p><a target="_blank" href="http://ictp.caict.ac.cn/CN/10.12267/j.issn.2096-5931.2025.08.003">打开材料</a></div></label>
+</div>
+<textarea class="note" data-note="reports" placeholder="研报判断、矛盾点、待验证假设（自动保存）"></textarea>
+</section>
+<footer>当前版本使用浏览器 localStorage。跨设备同步需部署静态网页并接入云端数据库。</footer>
+</main>
+<script>
+const M=[
+{n:1,t:"财务·折现与报表",g:"晚间学习财务；碎片时间读研报1–3",x:[
+["finance","财务","F1：折现与投资回报","CFA：Time Value of Money、Rates and Returns、Capital Investments，约8h。","NPV/IRR/回本周期Excel模板，并用Robotaxi单车投资回报校验。"],
+["finance","财务","F2上：利润表与资产负债表","CFA FSA相关章节，约6h；配一家上市机器人或自动驾驶公司年报。","一页《从报表看这家公司的业务真相》。"],
+["embodied","研报","并行阅读1–3","IFR → McKinsey → Morgan Stanley，每篇≤2h。","服务机器人基线表、四座桥映射表、20家公司清单。"],
+["work","本职","决策日志启动","记录自动策略化中的目标函数权重取舍。","3–5条决策记录：背景、选项、依据、结果。"]]},
+{n:2,t:"财务·现金流与UE",g:"财务线收口；碎片时间读研报4–6",x:[
+["finance","财务","F2下+F3：现金流、折旧、建模","Cash Flow、Long-lived Assets、Financial Analysis/Modeling，约12h。","折旧年限、残值率、套件独立核算的UE敏感性表。"],
+["finance","财务","F4–F6：资本成本、单位经济与估值","Cost of Capital、Leverage、DCF/相对估值；补充contribution margin、TCO、payback、资产周转率，约14h。","单位经济术语对照表+财务工具包v1；此后停止系统学CFA。"],
+["embodied","研报","并行阅读4–6并合并","MERICS → GGII → 信通院。","证据对照表、部署五级表、技术栈图、行业地图v1。"],
+["work","本职","海外复制差异表v0.1","比较国内与海外的人力、场地、法规、能源、网络、车辆能力与流程。","中国特有条件/海外参数/普适机制三栏表。"]]},
+{n:3,t:"AI·能力测量",g:"从“好用”升级为可比较、可复现",x:[
+["ai","AI","质量维度表","拆出指令遵循、事实准确、长上下文、推理、格式、拒答、语言、长输出、工具调用、成本延迟。","10维评估表，每维含定义、测试方式、1–5分标准。"],
+["ai","AI","私有评测集v1","从PRD、日文商务文书、纪要、成本分析、长PDF、调度逻辑和歧义需求提炼20题。","20题及期望输出、评分维度、失败条件。"],
+["ai","AI","五模型实测","同题运行Kimi、ChatGPT、Claude、豆包、DeepSeek。","模型对比v1：强弱项、稳定性、最适场景。"],
+["work","本职","亲自完成一份PRD","负责一个自动策略需求的定义、口径、优先级和验收。","可明确归属于你的完整PRD。"]]},
+{n:4,t:"AI·机制与成本",g:"只学能解释产品行为和成本的机制",x:[
+["ai","AI","机制九条","上下文、tokenization、采样、RAG、预训练/微调/prompt、成本、幻觉、Agent、评估。","至少6条“现象→机制→产品可解/模型天花板”案例。"],
+["ai","AI","Token经济学","输入输出定价、缓存、长上下文、模型路由、订阅与按量。","一个AI产品的单用户成本估算。"],
+["ai","AI","工作流嵌入","将AI嵌入周报、纪要、翻译或批量文档处理。","稳定工作流+模板库+省时/浪费时间边界。"],
+["work","本职","目标函数方法v0.5","复盘成本、时效、安全、体验、供给之间的权重。","《自动调度目标函数设计方法》草稿。"]]},
+{n:5,t:"公开信息深挖",g:"零人情替代工厂走访，并做第一次方向判断",x:[
+["embodied","具身智能","JD反推组织与痛点","收集15家公司近半年JD，观察运维、交付、远程支持和产品岗。","组织与痛点反推表，标出已需要目标角色的公司。"],
+["embodied","具身智能","财报与公开材料","分析2–3家上市标的的售价、毛利、研发、存货、交付口径。","单台经济性拆解。"],
+["embodied","具身智能","公共观察与用户抱怨","公共空间机器人、部署视频、点评和社交平台评价。","4类场景失效模式+10个宣称/可验证能力对照+三类归因。"],
+["work","本职","自动策略案例骨架","选一个人工规则转系统策略的模块。","问题、目标函数、护栏、灰度、指标和复盘。"]],c:"检查真实部署与产品岗机会；若明显不足，M6起将矿卡、物流、配送、清扫、AMR提升为对等方向。"},
+{n:6,t:"框架迁移",g:"完成年度最重要的单一产出物",x:[
+["embodied","具身智能","机器人UE框架v1","将人/车/场和六大能力模块迁移为人/机/场及机器人模块。","《机器人集群规模化运营与单位经济框架》v1。"],
+["finance","财务","场景经济性模板","选工厂搬运、仓储拣选或酒店配送；输入人力、TCO、成功率、节拍和运维成本。","ROI/回本周期及敏感性模板，数据与TBD分开。"],
+["work","本职","团队管理证据","梳理产品、运营、项目经理团队及全国落地管理。","3个团队管理STAR案例。"]]},
+{n:7,t:"产品产出",g:"证明你能定义具身智能系统",x:[
+["embodied","具身智能","机器人调度PRD","选两百台园区配送等具体场景；定义触发、优先级、并串行、超时、异常和人工边界。","《机器人调度与运营系统PRD》v1。"],
+["ai","AI","VLA与兜底边界","学习多模态、VLA、遥操作、仿真与sim2real，不深入训练。","一页《模型解决/产品与运营兜底》。"],
+["work","本职","指标归因v0.5","整理指标定义、采集、归因、护栏和防作弊。","《运营指标体系与归因方法》v0.5。"]]},
+{n:8,t:"资产整合与定位",g:"作品集和市场叙事全部就位",x:[
+["embodied","具身智能","作品迭代与目标名单","用M5公开信息校验框架、PRD和场景测算。","框架/PRD/测算v2+15家公司长名单+尽调七问。"],
+["work","本职","简历三版","突出跨职能团队管理和国内到海外复制。","具身智能版、邻近赛道版、英文版+8个STAR。"],
+["work","本职","指标归因v1与案例包","连接策略、收入、成本、海外复制和团队管理。","指标体系v1+5分钟商业案例。"]],c:"收口一条主路径；依据是真实机会和岗位权责，不是热度或公司名气。"},
+{n:9,t:"对外验证启动",g:"以明确问题清单触发沟通，不设访谈次数",x:[
+["network","对外","问题清单驱动对话","先写公开信息无法回答的问题，再约前同事、从业者或付费专家。","问题清单+答案记录；按解决问题数而非对话数评估。"],
+["network","对外","首轮反馈","用框架与场景测算交换行业认知。","有效/被质疑叙事清单+前同事去向名单。"],
+["work","本职","目标函数方法定稿","汇总权重、灰度和回滚证据。","《自动调度目标函数与策略迭代方法》v1。"]]},
+{n:10,t:"定位迭代",g:"从长名单中进入高质量深度接触",x:[
+["network","对外","定位v2","依据M9反馈修正框架、简历和表达。","定位叙事v2+修正版作品。"],
+["network","对外","深度接触","筛选5–8家，优先触达业务一号位并主动定义岗位。","2–3家进入深度沟通。"],
+["work","本职","合规成果表述","只保留方法论和可公开证据，不带公司材料。","可对外讲述的成果版本。"]]},
+{n:11,t:"机会与谈判",g:"判断岗位是否真的允许你做成事情",x:[
+["network","对外","机会推进","推进目标公司流程。","争取至少3家进入后段。"],
+["network","对外","谈判与尽调","评估title、团队、汇报、目标、部署、复购、UE和资金。","底线/目标/理想三档+公司评分卡。"],
+["work","本职","背调与交接预案","梳理证明成果的人与合规口径。","联系人清单+交接框架。"]]},
+{n:12,t:"收口与复盘",g:"是否跳槽由机会质量决定，不由焦虑决定",x:[
+["network","对外","最终决策","横向比较机会与尽调结果。","有优质机会则决策；不足则延后，不强行跳。"],
+["embodied","具身智能","行业地图v3","复核部署、复购、融资和团队变化。","地图v3+《我一年前判断错在哪里》。"],
+["work","本职","年度资产审计","检查决策日志、目标函数、指标归因、海外复制、PRD和团队案例。","年度作品目录+下一年度3个重点。"]]}
+];
+const names={finance:"财务",ai:"AI",embodied:"具身智能/研报",work:"本职",network:"对外"};
+const nav=document.getElementById("nav"),root=document.getElementById("months");
+const e=s=>String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
+M.forEach(m=>{
+ nav.insertAdjacentHTML("beforeend",`<a href="#m${m.n}">M${m.n} ${e(m.t)}</a>`);
+ root.insertAdjacentHTML("beforeend",`<section class="month" id="m${m.n}"><div class="mh"><div class="mn">M${String(m.n).padStart(2,"0")}</div><div><span class="theme">${e(m.t)}</span><h2>${e(m.g)}</h2></div><select data-status="m${m.n}"><option>未开始</option><option>进行中</option><option>有阻塞</option><option>已完成</option></select></div><div class="tasks">${m.x.map((t,i)=>`<article class="task"><div class="top"><input class="check" type="checkbox" data-task="m${m.n}-${i}"><div><span class="tag ${t[0]}">${e(t[1])}</span><h3>${e(t[2])}</h3></div></div><div class="io"><b>输入</b><div>${e(t[3])}</div><b>输出</b><div>${e(t[4])}</div></div><textarea data-comment="m${m.n}-${i}" placeholder="进展、问题、链接或复盘（自动保存）"></textarea></article>`).join("")}${m.c?`<div class="checkpoint"><b>GO / NO-GO：</b>${e(m.c)}</div>`:""}</div><textarea class="note" data-note="m${m.n}" placeholder="月度复盘与下月调整（自动保存）"></textarea></section>`);
+});
+nav.insertAdjacentHTML("beforeend",`<a href="#reports">研报清单</a>`);
+const KEY="embodied-plan-v3";
+function data(){let d={task:{},comment:{},note:{},status:{},extra:{}};document.querySelectorAll("[data-task]").forEach(x=>d.task[x.dataset.task]=x.checked);document.querySelectorAll("[data-comment]").forEach(x=>d.comment[x.dataset.comment]=x.value);document.querySelectorAll("[data-note]").forEach(x=>d.note[x.dataset.note]=x.value);document.querySelectorAll("[data-status]").forEach(x=>d.status[x.dataset.status]=x.value);document.querySelectorAll("[data-extra]").forEach(x=>d.extra[x.dataset.extra]=x.checked);return d}
+function load(d={}){document.querySelectorAll("[data-task]").forEach(x=>{x.checked=!!d.task?.[x.dataset.task];x.closest(".task").classList.toggle("done",x.checked)});document.querySelectorAll("[data-comment]").forEach(x=>x.value=d.comment?.[x.dataset.comment]||"");document.querySelectorAll("[data-note]").forEach(x=>x.value=d.note?.[x.dataset.note]||"");document.querySelectorAll("[data-status]").forEach(x=>x.value=d.status?.[x.dataset.status]||"未开始");document.querySelectorAll("[data-extra]").forEach(x=>x.checked=!!d.extra?.[x.dataset.extra]);progress()}
+function progress(){let all=[...document.querySelectorAll("[data-task]")],done=all.filter(x=>x.checked).length,p=all.length?Math.round(done/all.length*100):0;document.getElementById("pct").textContent=p+"%";document.getElementById("count").textContent=`${done}/${all.length} 项`;document.getElementById("bar").style.width=p+"%";document.getElementById("tracks").innerHTML=Object.entries(names).map(([k,v])=>{let a=[...document.querySelectorAll("."+k)].map(x=>x.closest(".task").querySelector("[data-task]"));return `<span>${v} ${a.filter(x=>x.checked).length}/${a.length}</span>`}).join("")}
+let timer;function save(){clearTimeout(timer);document.getElementById("saved").textContent="保存中…";timer=setTimeout(()=>{localStorage.setItem(KEY,JSON.stringify(data()));document.getElementById("saved").textContent="已保存 "+new Date().toLocaleTimeString("zh-CN",{hour:"2-digit",minute:"2-digit"})},150)}
+document.addEventListener("input",x=>{if(x.target.matches("[data-task]"))x.target.closest(".task").classList.toggle("done",x.target.checked);if(x.target.matches("[data-task],[data-comment],[data-note],[data-status],[data-extra]")){progress();save()}});
+document.getElementById("export").onclick=()=>{let b=new Blob([JSON.stringify(data(),null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="具身智能转型计划备份.json";a.click();URL.revokeObjectURL(a.href)};
+document.getElementById("import").onchange=x=>{let f=x.target.files[0];if(!f)return;let r=new FileReader;r.onload=()=>{try{let d=JSON.parse(r.result);load(d);save()}catch{alert("备份格式错误")}};r.readAsText(f);x.target.value=""};
+document.getElementById("reset").onclick=()=>{if(confirm("确认清空全部标记和批注？")){localStorage.removeItem(KEY);load({})}};
+try{load(JSON.parse(localStorage.getItem(KEY)||"{}"))}catch{load({})}
+</script></body></html>
